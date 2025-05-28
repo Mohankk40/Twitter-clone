@@ -27,14 +27,13 @@ const userSchema = new mongoose.Schema({
       default: []
     }
   ],
-    following: [
+  following: [
     {
       type: mongoose.Schema.Types.ObjectId, 
       ref: 'User',
       default: []
     }
   ],
-
   profileImg:{
     type: String,
     default: "",
@@ -50,7 +49,14 @@ const userSchema = new mongoose.Schema({
   link: {
     type: String,
     default: "",
-  }
+  },
+  likedPosts: [
+    {
+      type: mongoose.Schema.Types.ObjectId, 
+      ref: 'Post',
+      default: []
+    }
+  ],
 
 },{timestamps: true});
 
